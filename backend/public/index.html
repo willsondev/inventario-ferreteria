@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Productos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Administrador de Productos</h1>
+
+    <!-- Formulario para agregar producto -->
+    <form id="producto-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" required><br>
+        
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required><br>
+        
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+            <!-- Options will be populated dynamically -->
+        </select><br>
+        
+        <label for="proveedor">Proveedor:</label>
+        <select id="proveedor" name="proveedor" required>
+            <!-- Options will be populated dynamically -->
+        </select><br>
+        
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <!-- Botón para agregar nueva categoría -->
+    <button id="agregar-categoria">Agregar Nueva Categoría</button>
+
+    <!-- Botón para agregar nuevo proveedor -->
+    <button id="agregar-proveedor">Agregar Nuevo Proveedor</button>
+
+    <input type="text" id="buscar" placeholder="Buscar productos...">
+
+    <table id="productos-table" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Categoría</th>
+                <th>Proveedor</th>
+                
+            </tr>
+        </thead>
+        <tbody id="productos-list">
+
+        </tbody>
+    </table>
+    
+    
+    <!-- Filtros -->
+    <div>
+        <label for="filtro-categoria">Filtrar por Categoría:</label>
+        <select id="filtro-categoria">
+            <option value="">Todas las Categorías</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+        <button id="eliminar-categoria">Eliminar Categoría</button>
+        
+        <label for="filtro-proveedor">Filtrar por Proveedor:</label>
+        <select id="filtro-proveedor">
+            <option value="">Todos los Proveedores</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+        <button id="eliminar-proveedor">Eliminar Proveedor</button>
+
+        <button id="filtrar">Filtrar</button>
+    </div>
+
+    <!-- Formulario para subir archivo Excel -->
+   <form id="upload-form">
+    <input type="file" id="file" name="file">
+    <button type="submit">Subir Archivo</button>
+</form>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
